@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name='hdptest',
-    version='0.2',
+    version='0.3',
     scripts=[],
     author="Ismael Figueroa",
     author_email="ifigueroap@gmail.com",
