@@ -5,7 +5,7 @@ from .hdptest import hdp_test
 from IPython.core.magic import register_cell_magic
 @register_cell_magic
 def hdptest(line, cell):
-    get_ipython().run_cell_magic('run_pytest[clean]', ' -qq -s --silent --disable-warnings', cell)
+    get_ipython().run_cell_magic('run_pytest[clean]', ' -qq -s --disable-warnings', cell)
 
 del hdptest
 
