@@ -15,7 +15,7 @@ def compare_ignore_spaces(a, b):
     """
     Compare two base strings, disregarding whitespace
     """
-    return re.sub("\s*", "", a) == re.sub("\s*", "", b)
+    return re.sub("[\n\t\s]*", "", a) == re.sub("[\n\t\s]*", "", b)
 
 import sys
 from unittest.mock import patch
