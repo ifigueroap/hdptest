@@ -10,6 +10,13 @@ def hdp_test(_fun, _expected, *_input):
     except:
         display(HTML(err_message.format(_input, _expected, _res)))
 
+import re
+def compare_ignore_spaces(a, b):
+    """
+    Compare two base strings, disregarding whitespace
+    """
+    return re.sub("\s*", "", a) == re.sub("\s*", "", b)
+
 import sys
 from unittest.mock import patch
 
@@ -36,7 +43,7 @@ def hdp_test_io(capsys, _fun, _expected_output, user_input = [], *_input):
         with capsys.disabled():
             sys.stdout.write(out)        
         try:    
-            assert out == _expected_output
+            assert compare_ignore_spaces(out, _expected_output)
             display(HTML(ok__message.format(user_input)))
         except:
             display(HTML(err_message.format(user_input, _expected_output)))
